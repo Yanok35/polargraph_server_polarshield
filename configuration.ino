@@ -98,6 +98,7 @@ void configuration_setup()
   mmPerStep = mmPerRev / multiplier(motorStepsPerRev);
   stepsPerMM = multiplier(motorStepsPerRev) / mmPerRev;
   
+#if defined(USE_LCD)
   // init SD card
   sd_initSD();
   lcd_initLCD();
@@ -106,6 +107,7 @@ void configuration_setup()
   pinMode(2, INPUT);
   touch.InitTouch();
   touch.setPrecision(PREC_MEDIUM);  
+#endif
   
   // calibration pins
   pinMode(ENDSTOP_X_MIN, INPUT_PULLUP);

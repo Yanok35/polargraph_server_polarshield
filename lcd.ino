@@ -20,7 +20,58 @@ There is a lot of this, but it's pretty samey.
 is touched. It sets a parameter (displayTouched) to true, but does not act 
 directly on the touch.
 */
-
+#if !defined(USE_LCD)
+void lcd_touchInput()
+{}
+void lcd_checkForInput()
+{}
+void lcd_updateDisplay()
+{}
+void lcd_processTouchCommand()
+{}
+void lcd_drawNumberWithBackground(int x, int y, long value)
+{}
+void lcd_drawFloatWithBackground(int x, int y, float value)
+{}
+void lcd_runStartScript()
+{}
+void lcd_runEndScript()
+{}
+void lcd_setCurrentMenu(byte menu)
+{}
+void lcd_displayFirstMenu()
+{}
+void lcd_drawStoreContentsMenu()
+{}
+void lcd_initLCD()
+{}
+void lcd_showSummary()
+{}
+void lcd_drawButtons()
+{}
+void lcd_drawButtonBackground(byte coordsIndex)
+{}
+void lcd_outlinePressedButton(byte pressedButton, byte r, byte g, byte b)
+{}
+void lcd_drawButton(byte but)
+{}
+void lcd_displayMachineSpec()
+{}
+void lcd_drawCurrentSelectedFilename()
+{}
+String lcd_loadFilename(String selectedFilename, int direction)
+{}
+String lcd_getNextFile(String selectedFilename)
+{}
+String lcd_getPreviousFile(String selectedFilename)
+{}
+void lcd_echoLastCommandToDisplay(String com, String prefix)
+{}
+byte lcd_getWhichButtonPressed(byte buttonNumber, byte menu)
+{}
+byte lcd_getButtonNumber(int x, int y)
+{}
+#else
 void lcd_touchInput()
 {
   // don't trigger if it's already in processing
@@ -598,7 +649,6 @@ void lcd_initLCD()
   lcd.print("Drawing with robots.", 20, buttonCoords[5][1]+32);
   lcd.setBackColor(colorDarkRed, colorDarkGreen, colorDarkBlue);
   lcd.print("v"+FIRMWARE_VERSION_NO, 20, buttonCoords[5][1]+buttonCoords[5][1]+gap);
-  
 }
 
 void lcd_showSummary()
@@ -1365,3 +1415,4 @@ byte lcd_getButtonNumber(int x, int y)
      && y >= buttonCoords[10][1] && y <= buttonCoords[11][1])
     return 6;
 }
+#endif

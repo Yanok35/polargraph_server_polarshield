@@ -330,8 +330,10 @@ void loop()
 /*===========================================================  
     These variables are for the polarshield / mega
 =========================================================== */    
+#if defined(USE_LCD)
 #include <UTFT.h>
 #include <UTouch.h>
+#endif
 
 
 
@@ -365,6 +367,7 @@ long ENDSTOP_Y_MIN_POSITION = 130;
 long motorARestPoint = 0;
 long motorBRestPoint = 0;
 
+#if defined(USE_LCD)
 /* Stuff for display */
 extern uint8_t SmallFont[];
 extern uint8_t BigFont[];
@@ -379,6 +382,7 @@ const int INTERRUPT_TOUCH_PIN = 0;
 boolean displayTouched = false;
 int touchX = 0;
 int touchY = 0;
+#endif
 
 // size and location of rove area
 long rove1x = 1000;
