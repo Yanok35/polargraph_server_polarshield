@@ -51,9 +51,9 @@ Put them in libraries/UTouch/UTouchCD.h
 #include <EEPROM.h>
 #include "EEPROMAnything.h"
 
-/*  ===========================================================  
-         CONFIGURATION!!
-    =========================================================== */    
+//  ===========================================================
+//       CONFIGURATION!!
+//  ===========================================================
 
 //Uncomment the following line to use a 2.4" panel, August 2014 and later
 #define LCD_TYPE TFT01_24_8
@@ -63,10 +63,10 @@ Put them in libraries/UTouch/UTouchCD.h
 //#define LCD_TYPE ITDB22
 
 
-/*  ===========================================================  
-         Define what kind of driver breakout you're using.
-         (By commenting out the one's you _haven't_ got.)
-    =========================================================== */    
+//  ===========================================================
+//       Define what kind of driver breakout you're using.
+//       (By commenting out the one's you _haven't_ got.)
+//  ===========================================================
 #ifndef MOTHERBOARD
 #define MOTHERBOARD POLARSHIELD
 //#define MOTHERBOARD RAMPS14
@@ -78,23 +78,23 @@ Put them in libraries/UTouch/UTouchCD.h
 #define RAMPS14 2
 #define TFTSHIELD 3
 
-/*  ===========================================================  
-    Control whether to look for touch input or update LCD
-    Comment this out if you DON'T have an LCD connected
-=========================================================== */    
+//  =======================================================
+//  Control whether to look for touch input or update LCD
+//  Comment this out if you DON'T have an LCD connected
+//  =======================================================
 #define USE_LCD
 
-/*  ===========================================================  
-    Some debugging flags
-=========================================================== */    
+//  =======================================================
+//  Some debugging flags
+//  =======================================================
 
 //#define DEBUG_SD
 //#define DEBUG_STATE
 #define DEBUG_COMMS
 
-/*  ===========================================================  
-    These variables are common to all polargraph server builds
-=========================================================== */    
+//  =======================================================
+//  These variables are common to all polargraph server builds
+//  =======================================================
 
 const String FIRMWARE_VERSION_NO = "1.4.3";
 #if MOTHERBOARD == RAMPS14
