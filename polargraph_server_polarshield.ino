@@ -67,16 +67,26 @@ Put them in libraries/UTouch/UTouchCD.h
 //       Define what kind of driver breakout you're using.
 //       (By commenting out the one's you _haven't_ got.)
 //  ===========================================================
+
+#define POLARSHIELD 1
+#define RAMPS14 2
+#define TFTSHIELD 3
+
 #ifndef MOTHERBOARD
 #define MOTHERBOARD POLARSHIELD
 //#define MOTHERBOARD RAMPS14
 //#define MOTHERBOARD TFTSHIELD
 #endif
 
+const String FIRMWARE_VERSION_NO = "1.4.3";
+#if MOTHERBOARD == RAMPS14
+  const String MB_NAME = "RAMPS14";
+#elif MOTHERBOARD == POLARSHIELD
+  const String MB_NAME = "POLARSHIELD";
+#elif MOTHERBOARD == TFTSHIELD
+  const String MB_NAME = "TFTSHIELD";
+#endif
 
-#define POLARSHIELD 1
-#define RAMPS14 2
-#define TFTSHIELD 3
 
 //  =======================================================
 //  Control whether to look for touch input or update LCD
@@ -95,15 +105,6 @@ Put them in libraries/UTouch/UTouchCD.h
 //  =======================================================
 //  These variables are common to all polargraph server builds
 //  =======================================================
-
-const String FIRMWARE_VERSION_NO = "1.4.3";
-#if MOTHERBOARD == RAMPS14
-  const String MB_NAME = "RAMPS14";
-#elif MOTHERBOARD == POLARSHIELD
-  const String MB_NAME = "POLARSHIELD";
-#elif MOTHERBOARD == TFTSHIELD
-  const String MB_NAME = "TFTSHIELD";
-#endif
 
 //  EEPROM addresses
 const int EEPROM_MACHINE_WIDTH = 0;
