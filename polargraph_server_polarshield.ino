@@ -73,8 +73,8 @@ Put them in libraries/UTouch/UTouchCD.h
 #define TFTSHIELD 3
 
 #ifndef MOTHERBOARD
-#define MOTHERBOARD POLARSHIELD
-//#define MOTHERBOARD RAMPS14
+//#define MOTHERBOARD POLARSHIELD
+#define MOTHERBOARD RAMPS14
 //#define MOTHERBOARD TFTSHIELD
 #endif
 
@@ -92,7 +92,7 @@ const String FIRMWARE_VERSION_NO = "1.4.3";
 //  Control whether to look for touch input or update LCD
 //  Comment this out if you DON'T have an LCD connected
 //  =======================================================
-#define USE_LCD
+//#define USE_LCD
 
 //  =======================================================
 //  Some debugging flags

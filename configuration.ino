@@ -88,9 +88,9 @@ void configuration_motorSetup()
   pinMode(MOTOR_B_ENABLE_PIN, OUTPUT);
   digitalWrite(MOTOR_B_ENABLE_PIN, HIGH);
   motorA.setEnablePin(MOTOR_A_ENABLE_PIN);
-  motorA.setPinsInverted(false, false, true);
+  motorA.setPinsInverted(true, false, true);
   motorB.setEnablePin(MOTOR_B_ENABLE_PIN);
-  motorB.setPinsInverted(true, false, true); // this one turns the opposite direction to A, hence inverted.
+  motorB.setPinsInverted(false, false, true); // this one turns the opposite direction to A, hence inverted.
 }
 
 void configuration_setup()
